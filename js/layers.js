@@ -32,8 +32,8 @@ addLayer("Planet", {
             cost: new Decimal(1),
             ifhasUpgrade(Planet,_11){},
              gain : gain.add(1)
-        }  
+        },  
    
-    }
+    },
     
 })
