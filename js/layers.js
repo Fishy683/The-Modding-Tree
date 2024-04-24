@@ -30,7 +30,7 @@ addLayer("Planet", {
             title: "The Start of All",
             description: "Start generation of Life.",
             cost: new Decimal(1),
-            ifhasUpgrade(Planet,$11){},
+            ifhasUpgrade(Planet,_11){},
              gain : gain.add(1)
         }  
    
