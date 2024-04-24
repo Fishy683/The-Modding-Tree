@@ -29,7 +29,7 @@ addLayer("p", {
         11: {
             title: "The Start of All",
             description: "Start generation of Life.",
-            cost: new Decimal(0),
+            cost: new Decimal(1),
         },    
     },
     
