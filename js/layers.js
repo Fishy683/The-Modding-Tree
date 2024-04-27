@@ -30,9 +30,8 @@ addLayer("Planet", {
         11: {
             description: "Begin generation of Life.",
             cost: new Decimal(1),
-            etc
-        },
-        etc
+            ifhasupgrade, gain : gain.add(1)
+               },
     }
 
 })
