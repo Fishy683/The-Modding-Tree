@@ -24,8 +24,15 @@ addLayer("Planet", {
     hotkeys: [
         {key: "p", description: "P: Reset for planet(s)", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-    layerShown(){return true}
-        
+    layerShown(){return true},
+
+    upgrades: {
+        11: {
+            description: "Begin generation of Life.",
+            cost: new Decimal(1),
+            etc
         },
-   
-    )
+        etc
+    }
+
+})
