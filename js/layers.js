@@ -30,8 +30,7 @@ addLayer("Planet", {
         11: {
             title: "The Start of All",
             description: "Begin generation of Life.",
-            cost: new Decimal(1),
-            
+            effect: "Doubles "
         },
     },
 
