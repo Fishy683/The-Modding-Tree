@@ -1,4 +1,4 @@
-addLayer("Planet", {
+addLayer("Planet", { // The ID for this layer is "Planet", so you would need to use if(hasUpgrade('Planet', 11)) instead of if(hasUpgrade('p', 11))
     name: "Planet", // This is optional, only used in a few places, If absent it just uses the layer id.
     symbol: "P", // This appears on the layer's node. Default is the id with the first letter capitalized
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
@@ -30,7 +30,9 @@ addLayer("Planet", {
         11: {
             title: "The Start of All",
             description: "Begin generation of Life.",
-            if:(hasUpgrade('p', 11)), gain:gain.add(1)
+            // if:(hasUpgrade('p', 11)), gain:gain.add(1) I've commented this since this is the line that is causing issues, but I still want it to be clear what I have done
+            // This if statement is also flawed (explanation at line 1 of this file)
+            // It's pretty clear from what you are after, that it is supposed to be in mod.js, line 46 (I've already put it there)
     },
 
 },})
