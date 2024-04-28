@@ -40,9 +40,15 @@ function canGenPoints(){
 // Calculate points/sec!
 function getPointGen() {
 	if(!canGenPoints())
-		return new Decimal(1)
+		return new Decimal(0)
 
 	let gain = new Decimal(0)
+
+	if(hasUpgrade('Planet', 11)) gain = gain.add(1) // The only valid place to put this is between the lines 'let gain = new Decimal(0)', and 'return gain'
+	                                                // Since it is the only place where gain is actually a variable
+
+	// You can put other things below this point to effect point gain more
+	
 	return gain
 }
 
