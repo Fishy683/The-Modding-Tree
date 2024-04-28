@@ -26,6 +26,13 @@ addLayer("Planet", {
     ],
     layerShown(){return true},
 
-    }
+    upgrades: {
+        11: {
+            title: "The Start of All",
+            description: "Begin generation of Life.",
+            cost: new Decimal(1),
+            
+        },
+    },
 
-)
+})
