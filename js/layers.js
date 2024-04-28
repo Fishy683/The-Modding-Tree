@@ -30,8 +30,8 @@ addLayer("Planet", {
         11: {
             title: "The Start of All",
             description: "Begin generation of Life.",
-            effect: "Doubles "
-        },
+            effect: "Gain 1 life every 1 second"
+            ,if:(hasUpgrade('p', 11)), gain : gain.add(1)
     },
 
-})
+},})
