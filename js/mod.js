@@ -40,9 +40,9 @@ function canGenPoints(){
 // Calculate points/sec!
 function getPointGen() {
 	if(!canGenPoints())
-		return new Decimal(2)
+		return new Decimal(0)
 
-	let gain = new Decimal(0)
+	let gain = new Decimal(1)
 	return gain
 }
 
