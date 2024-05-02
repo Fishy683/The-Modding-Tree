@@ -18,7 +18,7 @@ let VERSION = {
 }
 
 let changelog = `<h1>Changelog:</h1><br>
-	<h3>v0.0</h3><br>
+	<h3>v0.0 - 1 Upgrade</h3><br>
 		- Released the game.<br>
 		- Created First upgrade.`
 
@@ -40,7 +40,7 @@ function canGenPoints(){
 // Calculate points/sec!
 function getPointGen() {
 	if(!canGenPoints())
-		return new Decimal(1)
+		return new Decimal(0)
 
 	let gain = new Decimal(0)
 	return gain
@@ -77,3 +77,4 @@ function maxTickLength() {
 // you can cap their current resources with this.
 function fixOldSave(oldVersion){
 }
+
