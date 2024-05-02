@@ -27,13 +27,12 @@ addLayer("Planet", {
     layerShown(){return true},
      upgrades:{
         11: {
-            title: "Economic Inflation",
+            title: "The Start of All",
             description()  {
-                if(!hasMilestone('P', 8)) return "Start generating 1$ every second"
-                if(hasMilestone('P', 8)) return "Start generating 100$ every second"
+                if(hasUpgrade('P', 11)) return "Start generation of Life"
             },
             cost: new Decimal(0),
-            currencyDisplayName: "$",
+            currencyDisplayName: "Life",
             currencyInternalName: "points",
         },
 
