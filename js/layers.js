@@ -25,14 +25,19 @@ addLayer("Planet", {
         {key: "p", description: "P: Reset for planet(s)", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
-    11: {
-        title: "The Start of All",
-        description()  {
-            if(hasUpgrade('Planet', 11)) return "Start generation of Life."
+     upgrades:{
+        11: {
+            title: "Economic Inflation",
+            description()  {
+                if(!hasMilestone('P', 8)) return "Start generating 1$ every second"
+                if(hasMilestone('P', 8)) return "Start generating 100$ every second"
+            },
+            cost: new Decimal(0),
+            currencyDisplayName: "$",
+            currencyInternalName: "points",
         },
-        cost: new Decimal(1),
-        currencyDisplayName: "Life",
-        currencyInternalName: "Planets",
-    },
+
+
+     }
 
 })
