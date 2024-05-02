@@ -29,7 +29,7 @@ addLayer("Planet", {
         11: {
             title: "The Start of All",
             description()  {
-                if(hasUpgrade('P', 11)) return "Start generation of Life"
+                if(hasUpgrade('Planet', 11)) return "Start generation of Life"
             },
             cost: new Decimal(0),
             currencyDisplayName: "Life",
