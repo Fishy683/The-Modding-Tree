@@ -33,7 +33,7 @@ addLayer("Planet", {
             },
             cost: new Decimal(0),
             currencyDisplayName: "Life",
-            currencyInternalName: "points",
+            
         },
 
 
