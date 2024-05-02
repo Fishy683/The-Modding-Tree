@@ -31,6 +31,7 @@ addLayer("Planet", {
             description()  {
                 if(hasUpgrade('Planet', 11)) return "Start generation of Life"
             },
+            description: "Start generation of Life",
             cost: new Decimal(0),
             currencyDisplayName: "Life",
             
