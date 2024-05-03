@@ -38,15 +38,15 @@ function canGenPoints(){
 }
 
 // Calculate points/sec!
-function getPointGen() {
+function getPointGen () {
+	if(hasupgrade('Planet',11)) gain=gain.add(1)
 	if(!canGenPoints())
 		return new Decimal(1)
 	
 	let gain = new Decimal(0)
-	if(hasupgrade('Planet',11)) gain = gain.add(1)
 	return gain
-
 }
+     
 
 // You can add non-layer related variables that should to into "player" and be saved here, along with default values
 function addedPlayerData() { return {
