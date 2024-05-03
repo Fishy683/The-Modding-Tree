@@ -28,8 +28,6 @@ addLayer("Planet", {
      upgrades:{
         11: {
             title: "The Start of All",
-            effect()  {
-            },
             description: "Start generation of Life",
             cost: new Decimal(1),
             currencyDisplayName: "Life",
