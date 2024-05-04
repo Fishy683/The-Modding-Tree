@@ -16,6 +16,7 @@ addLayer("Planet", {
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         if(hasUpgrade('Planet',13)) mult = mult.times(1.15)
+        if(hasUpgrade('Planet',14)) mult = mult.times(1.08)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -38,10 +39,14 @@ addLayer("Planet", {
             cost: new Decimal(5),
         },
         13: {
-            title: "Increasing life",
+            title: "Increasing Life",
             description: "Planet gain formula is better",
             cost: new Decimal(10),
         },
+        14: {
+            title: "Exchange",
+            description: "Increase Life gain, but decrease the previous upgrade's effect"
+        }
     
 
      },
