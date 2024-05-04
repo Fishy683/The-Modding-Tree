@@ -43,7 +43,9 @@ function getPointGen () {
 		return new Decimal(1)
 	
 	let gain = new Decimal(0)
+
 	if(hasupgrade('Planet',11)) gain=gain.add(1)
+	
 	return gain
 }
      

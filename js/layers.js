@@ -30,7 +30,6 @@ addLayer("Planet", {
             title: "The Start of All",
             description: "Start generation of Life",
             cost: new Decimal(1),
-            currencyDisplayName: "Life",
             
         },
 
