@@ -33,7 +33,10 @@ addLayer("Planet", {
      upgrades:{
         11: {
             title: "The Start of All",
-            description: "Start generation of Life",
+            description()  {
+                if(!hasMilestone('Star', 0)) return "Start generation of Life"
+                if(hasMilestone('Star', 0)) return "Start generating 20 Lives every second"
+            },
             cost: new Decimal(0),
         },
         12: {
@@ -84,7 +87,7 @@ addLayer("Star", {
 		points: new Decimal(0),
     }},
     color: "#CB2C14",
-    requires: new Decimal(5000), // Can be a function that takes requirement increases into account
+    requires: new Decimal(25000), // Can be a function that takes requirement increases into account
     resource: "Stars", // Name of prestige currency
     baseResource: "Planets", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
@@ -102,5 +105,19 @@ addLayer("Star", {
         {key: "s", description: "S: Reset for Star(s)", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
+    milestones: {
+        0: {
+            requirementDescription: "First Star",
+            effectDescription: "Increases effects of the Planet layer",
+            done() { return player.w.points.gte(1) },
+        },
+    },
+    upgrades: {
+        11: {
+             title: "First Energy Source",
+             description: "Gives Energy to Life",
+             cost: new Decimal(1)
+        }
+    }
 
 })
