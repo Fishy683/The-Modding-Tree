@@ -15,6 +15,7 @@ addLayer("Planet", {
     exponent: 0.5, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
+        if(hasUpgrade('Planet',13)) mult = mult.times(1.15)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -29,11 +30,20 @@ addLayer("Planet", {
         11: {
             title: "The Start of All",
             description: "Start generation of Life",
-            cost: new Decimal(1),
-            
+            cost: new Decimal(0),
         },
+        12: {
+            title: "Rapid Growth",
+            description: "Double Life gain",
+            cost: new Decimal(5),
+        },
+        13: {
+            title: "Increasing life",
+            description: "Planet gain formula is better",
+            cost: new Decimal(10),
+        },
+    
 
-
-     }
+     },
 
 })
