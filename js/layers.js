@@ -45,8 +45,9 @@ addLayer("Planet", {
         },
         14: {
             title: "Exchange",
-            description: "Increase Life gain, but decrease the previous upgrade's effect"
-        }
+            description: "Increase Life gain, but decrease the previous upgrade's effect",
+            cost: new Decimal(20),
+        },
     
 
      },
