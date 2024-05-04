@@ -7,20 +7,20 @@ let modInfo = {
 
 	discordName: "",
 	discordLink: "",
-	initialStartPoints: new Decimal (0), // Used for hard resets and new players
+	initialStartPoints: new Decimal (1), // Used for hard resets and new players
 	offlineLimit: 1,  // In hours
 }
 
 // Set your version in num and name
 let VERSION = {
 	num: "0.0",
-	name: "ONE SINGULAR UPGRADE",
+	name: "1 Upgrade",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
 	<h3>v0.0</h3><br>
 		- Released the game.<br>
-		- Created First upgrade.`
+		- Created First upgrade.<br>`
 
 let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
 
