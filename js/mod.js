@@ -46,7 +46,7 @@ function getPointGen () {
 
 	if(!hasMilestone('Star', 0)) {
          if (hasUpgrade('Planet', 11)) gain = gain.add(1)
-		}
+	}
     if(hasMilestone('Star', 0)) {
          if (hasUpgrade('Planet', 11)) gain = gain.add(21)
 	}
