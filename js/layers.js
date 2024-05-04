@@ -15,8 +15,11 @@ addLayer("Planet", {
     exponent: 0.5, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
+
         if(hasUpgrade('Planet',13)) mult = mult.times(1.15)
         if(hasUpgrade('Planet',14)) mult = mult.times(0.9)
+        if(hasUpgrade('Planet',23)) mult = mult.times(1.35)
+
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -51,8 +54,23 @@ addLayer("Planet", {
         21:{
             title: "Life Strikes Again",
             description: "Increase Life gain",
-            cost: new Decimal(100)
-        }
+            cost: new Decimal(100),
+        },
+        22:{
+            title: "Born Rates Increase",
+            description: "Give a small boost to Life gain",
+            cost: new Decimal(200),
+        },
+        23:{
+            title: "Global Pandemic",
+            description: "Decrease Life gain for a boost",
+            cost: new Decimal(250),
+        },
+        24:{
+            title: "Energy is near",
+            description: "Life gain is STRONG",
+            cost: new Decimal (1000),
+        },
      },
 
 })

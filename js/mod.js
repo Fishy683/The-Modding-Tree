@@ -14,13 +14,13 @@ let modInfo = {
 // Set your version in num and name
 let VERSION = {
 	num: "0.0",
-	name: "1 Upgrade",
+	name: "8 Upgrades",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
 	<h3>v0.0</h3><br>
 		- Released the game.<br>
-		- Created First upgrade.<br>`
+		- Created 8 upgrades.<br>`
 
 let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
 
@@ -48,6 +48,9 @@ function getPointGen () {
 	if(hasUpgrade('Planet',12)) gain = gain.times(2)
 	if(hasUpgrade('Planet',14)) gain = gain.add(3)
 	if(hasUpgrade('Planet',21)) gain = gain.times(5)
+	if(hasUpgrade('Planet',22)) gain = gain.add(5)
+	if(hasUpgrade('Planet',23)) gain = gain.add(-10)
+	if(hasUpgrade('Planet',24)) gain = gain.add(180)
 		
 	return gain
 }
