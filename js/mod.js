@@ -46,7 +46,7 @@ function getPointGen () {
 
 	if(hasUpgrade('Planet',11)) gain = gain.add(1)
 	if(hasUpgrade('Planet',12)) gain = gain.times(2)
-	if(hasUpgrade('Planet',14)) gain = gain.add(5)
+	if(hasUpgrade('Planet',14)) gain = gain.add(3)
 	if(hasUpgrade('Planet',21)) gain = gain.times(5)
 		
 	return gain
