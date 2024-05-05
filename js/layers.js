@@ -84,7 +84,7 @@ addLayer("E", {
 		points: new Decimal(0),
     }},
     color: "#FFD500",
-    requires: new Decimal(1), // Can be a function that takes requirement increases into account
+    requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "Energy", // Name of prestige currency
     baseResource: "Life", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
@@ -99,8 +99,7 @@ addLayer("E", {
     },
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
-        {key: "e", description: "E: Reset for Energy", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+        {key: "e", description: "E: Reset for energy", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-    layerShown(){return true},
-
+    layerShown(){return true}
 })
