@@ -1,4 +1,4 @@
-addLayer("Planet", {
+addLayer("P", {
     name: "Planet", // This is optional, only used in a few places, If absent it just uses the layer id.
     symbol: "P", // This appears on the layer's node. Default is the id with the first letter capitalized
     position: 1, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
@@ -16,9 +16,9 @@ addLayer("Planet", {
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
 
-        if(hasUpgrade('Planet',13)) mult = mult.times(1.15)
-        if(hasUpgrade('Planet',14)) mult = mult.times(0.9)
-        if(hasUpgrade('Planet',23)) mult = mult.times(1.35)
+        if(hasUpgrade('P',13)) mult = mult.times(1.15)
+        if(hasUpgrade('P',14)) mult = mult.times(0.9)
+        if(hasUpgrade('P',23)) mult = mult.times(1.35)
 
         return mult
     },
@@ -74,7 +74,7 @@ addLayer("Planet", {
      },
 
 })
-addLayer("Energy", {
+addLayer("E", {
     name: "Energy", // This is optional, only used in a few places, If absent it just uses the layer id.
     symbol: "E", // This appears on the layer's node. Default is the id with the first letter capitalized
     position: 2, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
