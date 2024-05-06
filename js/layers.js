@@ -25,4 +25,12 @@ addLayer("P", {
         {key: "p", description: "P: Reset for Planet(s)", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
+    upgrades: {
+        11: {
+            title: "The Start of All",
+            description: "Start generation of Life",
+            cost: new Decimal(0)
+
+        },
+    },
 })
