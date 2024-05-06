@@ -1,7 +1,7 @@
 let modInfo = {
 	name: "The Universe Tree",
 	id: "UniverseMod",
-	author: "Somebody",
+	author: "somebody",
 	pointsName: "Life",
 	modFiles: ["layers.js", "tree.js"],
 
@@ -14,13 +14,13 @@ let modInfo = {
 // Set your version in num and name
 let VERSION = {
 	num: "0.0",
-	name: "8 Upgrades",
+	name: "First Layer",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
 	<h3>v0.0</h3><br>
-		- Released the game.<br>
-		- Created 8 upgrades.<br>`
+		- Added First layer.<br>
+		- 8 Upgrades<br>.`
 
 let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
 
@@ -38,23 +38,13 @@ function canGenPoints(){
 }
 
 // Calculate points/sec!
-function getPointGen () {
+function getPointGen() {
 	if(!canGenPoints())
-		return new Decimal(1)
-	
-	let gain = new Decimal(0)
+		return new Decimal(0)
 
-	if(hasUpgarde('P',11)) gain = gain.add(1)
-	if(hasUpgrade('P',12)) gain = gain.times(2)
-	if(hasUpgrade('P',14)) gain = gain.add(3)
-	if(hasUpgrade('P',21)) gain = gain.times(5)
-	if(hasUpgrade('P',22)) gain = gain.add(5)
-	if(hasUpgrade('P',23)) gain = gain.add(-10)
-	if(hasUpgrade('P',24)) gain = gain.add(180)
-		
+	let gain = new Decimal(0)
 	return gain
 }
-     
 
 // You can add non-layer related variables that should to into "player" and be saved here, along with default values
 function addedPlayerData() { return {
@@ -87,4 +77,3 @@ function maxTickLength() {
 // you can cap their current resources with this.
 function fixOldSave(oldVersion){
 }
-
