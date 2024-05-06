@@ -8,7 +8,7 @@ addLayer("P", {
     }},
     color: "#4BDC13",
     requires: new Decimal(0), // Can be a function that takes requirement increases into account
-    resource: "Planet", // Name of prestige currency
+    resource: "Planets", // Name of prestige currency
     baseResource: "Life", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
