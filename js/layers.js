@@ -24,5 +24,5 @@ addLayer("P", {
     hotkeys: [
         {key: "p", description: "P: Reset for Planet(s)", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-    layerShown(){return true}
+    layerShown(){return true},
 })
