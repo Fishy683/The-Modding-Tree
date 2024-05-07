@@ -103,8 +103,9 @@ addLayer("E", {
     layerShown(){return true},
     buyables: {
         11: {
+            title: "Water Energy",
             cost() { return new Decimal(1).mul(10) },
-            display() { return "Water Energy" },
+            display() { return "Increase your Water sources by 1, which gains 1 Energy per second." },
             canAfford() { return player[this.layer].points.gte(this.cost()) },
             buy() {
                 player[this.layer].points = player[this.layer].points.sub(this.cost())
