@@ -39,38 +39,45 @@ addLayer("P", {
         12: {
             title: "More Lives",
             description: "Life generation is now 5 per second",
-            cost: new Decimal(5)
+            cost: new Decimal(5),
+            unlocked() { return hasUpgrade('P', 11) }
         },
         13: {
             title: "More Planets",
             description: "Planet gain formula is better",
-            cost: new Decimal(15)
+            cost: new Decimal(15),
+            unlocked() { return hasUpgrade('P', 12) }
         },
         14: {
-            title: "High Production Rates",
+            title: "Even MORE Life",
             description: "Double Life gain",
-            cost: new Decimal(25)
+            cost: new Decimal(25),
+            unlocked() { return hasUpgrade('P', 13) }
         },
         21: {
-            title: "Even MORE Life",
-            description: "Multiply current life gain by 5",
-            cost: new Decimal(50)
+            title: "Life Strikes Again",
+            description: "Multiply Life gain by 5",
+            cost: new Decimal(5),
+            unlocked() { return hasUpgrade('P', 14) }
         },
         22: {
             title: "Exchange",
             description: "Decrease Life gain for a boost in the Planet formula",
-            cost: new Decimal(75)
+            cost: new Decimal(75),
+            unlocked() { return hasUpgrade('P',21)}
         },
         23:{
             title: "Many Planets",
             description: "Increase the Planet gain formula",
-            cost: new Decimal(100)
+            cost: new Decimal(100),
+            unlocked() { return hasUpgrade('P',22)}
         },
         24: {
             title: "Exchange 2",
             description: "Increase Life gain for a small decrease in the Planet formula",
-            cost: new Decimal(150)
-        }
+            cost: new Decimal(150),
+            unlocked() { return hasUpgrade('P',23)}
+        },
     },
 })
 addLayer("E", {
@@ -104,7 +111,7 @@ addLayer("E", {
     buyables: {
         11: {
             title: "Water Energy",
-            cost(x) { return new Decimal(1).mul(x) },
+            cost(x) { return new Decimal(1).times(x) },
             display() { return "Increase your Water sources by 1, which gains 1 Energy per second." },
             canAfford() { return player[this.layer].points.gte(this.cost()) },
             buy() {
