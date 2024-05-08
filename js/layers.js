@@ -89,6 +89,7 @@ addLayer("ACH", {
         unlocked: true,
     }},
     color: "#F8C471",
+    row: side,
     achievements: {
         11: {
             name: "First Row Complete!",
