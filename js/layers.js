@@ -89,7 +89,7 @@ addLayer("ACH", {
         unlocked: true,
     }},
     color: "#F8C471",
-    row: side,
+    row: "side",
     achievements: {
         11: {
             name: "First Row Complete!",
@@ -98,8 +98,8 @@ addLayer("ACH", {
 
         },
         
-    }
-})
+    },
+}),
 addLayer("E", {
     name: "Energy", // This is optional, only used in a few places, If absent it just uses the layer id.
     symbol: "E", // This appears on the layer's node. Default is the id with the first letter capitalized
