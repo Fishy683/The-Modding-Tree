@@ -83,8 +83,9 @@ addLayer("P", {
 }),
 addLayer("ACH", {
     name: "Achievements", // This is optional, only used in a few places, If absent it just uses the layer id.
-    symbol: "ACH", // This appears on the layer's node. Default is the id with the first letter capitalized
+    symbol: "A", // This appears on the layer's node. Default is the id with the first letter capitalized
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
+    tooltip: "Achievements",
     startData() { return {
         unlocked: true,
     }},
@@ -94,7 +95,7 @@ addLayer("ACH", {
         11: {
             name: "First Row Complete!",
             done() {return hasUpgrade('P',11), hasUpgrade('P',12), hasUpgrade('P',13), hasUpgrade('P',14)},
-            tooltip: "1 Row of upgrades. Reward: Unlock Energy Upgrades!"
+            tooltip: "Reward: Unlock Energy Upgrades!"
 
         },
         
