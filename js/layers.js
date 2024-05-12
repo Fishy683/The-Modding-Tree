@@ -7,7 +7,7 @@ addLayer("P", {
 		points: new Decimal(0),
     }},
     color: "#4BDC13",
-    requires: new Decimal(0), // Can be a function that takes requirement increases into account
+    requires: new Decimal(), // Can be a function that takes requirement increases into account
     resource: "Planets", // Name of prestige currency
     baseResource: "Life", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
@@ -16,9 +16,9 @@ addLayer("P", {
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
 
-        if(hasUpgrade('P',13)) mult = mult.times(1.35)
-        if(hasUpgrade('P',22)) mult = mult.times(1.1)
-        if(hasUpgrade('P',24)) mult = mult.times(0.8)
+        if(hasUpgrade('P',13)) mult = mult.times(1.15)
+        if(hasUpgrade('P',14)) mult = mult.times(0.9)
+        if(hasUpgrade('P',23)) mult = mult.times(1.35)
             
         return mult
     },
@@ -31,55 +31,55 @@ addLayer("P", {
         onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
-    upgrades: {
+    upgrades:{
         11: {
             title: "The Start of All",
             description: "Start generation of Life",
-            cost: new Decimal(0)
+            cost: new Decimal(0),
         },
         12: {
-            title: "More Lives",
-            description: "Life generation is now 5 per second",
+            title: "Rapid Growth",
+            description: "Double Life gain",
             cost: new Decimal(5),
-            unlocked() {return hasUpgrade('P', 11) }
+            unlocked(){hasUpgrade('P',11)}
         },
         13: {
-            title: "More Planets",
+            title: "Increasing Life",
             description: "Planet gain formula is better",
-            cost: new Decimal(15),
-            unlocked() {return hasUpgrade('P', 12) }
+            cost: new Decimal(10),
+            unlocked(){hasUpgrade('P',12)},
         },
         14: {
-            title: "Even MORE Life",
-            description: "Double Life gain",
-            cost: new Decimal(25),
-            unlocked() {return hasUpgrade('P', 13) }
-        },
-        21: {
-            title: "Life Strikes Again",
-            description: "Multiply Life gain by 5",
-            cost: new Decimal(50),
-            unlocked() {return hasUpgrade('P', 14) }
-        },
-        22: {
             title: "Exchange",
-            description: "Decrease Life gain for a boost in the Planet formula",
-            cost: new Decimal(75),
-            unlocked() {return hasUpgrade('P',21)}
+            description: "Increase Life gain, but decrease the previous upgrade's effect",
+            cost: new Decimal(20),
+            unlocked(){hasUpgrade('P',13)},
+        },
+        21:{
+            title: "Life Strikes Again",
+            description: "Increase Life gain",
+            cost: new Decimal(100),
+            unlocked(){hasUpgrade('P',14)},
+        },
+        22:{
+            title: "Born Rates Increase",
+            description: "Give a small boost to Life gain",
+            cost: new Decimal(200),
+            unlocked(){hasUpgrade('P',21)},
         },
         23:{
-            title: "Many Planets",
-            description: "Increase the Planet gain formula",
-            cost: new Decimal(100),
-            unlocked() {return hasUpgrade('P',22)}
+            title: "Global Pandemic",
+            description: "Decrease Life gain for a boost",
+            cost: new Decimal(250),
+            unlocked(){hasUpgrade('P',22)},
         },
-        24: {
-            title: "Exchange 2",
-            description: "Increase Life gain for a small decrease in the Planet formula",
-            cost: new Decimal(150),
-            unlocked() {return hasUpgrade('P',23)}
+        24:{
+            title: "Too Many Life",
+            description: "Life gain is STRONGER",
+            cost: new Decimal (1000),
+            unlocked(){hasUpgrade('P',23)},
         },
-    },
+     },
 }),
 addLayer("ACH", {
     name: "Achievements", // This is optional, only used in a few places, If absent it just uses the layer id.
@@ -129,10 +129,5 @@ addLayer("E", {
         {key: "e", description: "E: Reset for Energy", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
-    upgrades:{
-        11:{
-            title: ""
-        },
-    },
     
 })
