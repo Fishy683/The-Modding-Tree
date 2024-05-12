@@ -20,7 +20,7 @@ let VERSION = {
 let changelog = `<h1>Changelog:</h1><br>
 	<h3>v0.0</h3><br>
 		- Added First layer.<br>
-		- 8 Upgrades.`
+		- 8 Upgrades.<br>`
 
 let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
 
@@ -44,7 +44,7 @@ function getPointGen() {
 
 	let gain = new Decimal(0)
 
-	if(hasUpgarde('P',11)) gain = gain.add(1)
+	if(hasUpgrade('P',11)) gain = gain.add(1)
 	if(hasUpgrade('P',12)) gain = gain.times(2)
 	if(hasUpgrade('P',14)) gain = gain.add(3)
 	if(hasUpgrade('P',21)) gain = gain.times(5)
