@@ -1,5 +1,5 @@
 // ************ Themes ************
-var themes = ["default", "aqua"]
+var themes = ["default", "aqua", "Cosmic"]
 
 var colors = {
 	default: {
@@ -21,6 +21,16 @@ var colors = {
 		locked: "#c4a7b3",
 		background: "#001f3f",
 		background_tooltip: "rgba(0, 15, 31, 0.75)",
+	},
+	Cosmic: {
+		1: "#ffdd00",
+		2: "#02d8ff",
+		3: "#b500ff",
+		color: "#00ff94",
+		points: "#45ffa8",
+		locked: "#df8f8f",
+		background: "#022bff",
+		background_tooltip: "rgba(0, 7, 15.5, 0.75)",
 	},
 }
 function changeTheme() {
