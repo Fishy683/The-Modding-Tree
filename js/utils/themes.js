@@ -54,7 +54,7 @@ function switchTheme() {
 	else {
 		index ++;
 		options.theme = themes[index];
-		options.theme = themes[1];
+		options.theme = themes[1,2];
 	}
 	changeTheme();
 	resizeCanvas();
