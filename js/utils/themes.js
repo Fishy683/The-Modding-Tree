@@ -29,7 +29,7 @@ var colors = {
 		color: "#00ff94",
 		points: "#45ffa8",
 		locked: "#df8f8f",
-		background: "#022bff",
+		background: "#011578",
 		background_tooltip: "rgba(0, 7, 15.5, 0.75)",
 	},
 }
