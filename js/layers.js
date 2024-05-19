@@ -7,7 +7,7 @@ addLayer("P", {
 		points: new Decimal(0),
     }},
     color: "#4BDC13",
-    requires: new Decimal(0), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1), // Can be a function that takes requirement increases into account
     resource: "Planets", // Name of prestige currency
     baseResource: "Lives", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
@@ -113,7 +113,7 @@ addLayer("E", {
 		points: new Decimal(0),
     }},
     color: "#FFD500",
-    requires: new Decimal(0), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1), // Can be a function that takes requirement increases into account
     resource: "Energy", // Name of prestige currency
     baseResource: "Life", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
