@@ -19,6 +19,7 @@ addLayer("P", {
         if(hasUpgrade('P',13)) mult = mult.times(1.15)
         if(hasUpgrade('P',14)) mult = mult.times(0.9)
         if(hasUpgrade('P',23)) mult = mult.times(1.35)
+        if(hasUpgrade('E',12)) mult = mult.times(2)
             
         return mult
     },
@@ -93,7 +94,7 @@ addLayer("ACH", {
     row: "side",
     achievements: {
         11: {
-            name: "First Row Complete!",
+            name: "Two Rows already",
             done() {return hasUpgrade('P',11), hasUpgrade('P',12), hasUpgrade('P',13), hasUpgrade('P',14), hasUpgrade('P',21), hasUpgrade('P',22), hasUpgrade('P',23),hasUpgrade('P',24)},
             tooltip: "Reward: Unlock Energy Upgrades!"
             },
@@ -136,14 +137,22 @@ addLayer("E", {
         11:{
             title: "Sound Energy",
             description: "Your first type of energy. Boosts Life gain exponentially.",
-            cost: new Decimal(0),
+            cost: new Decimal(100),
             unlocked() {return hasAchievement('ACH',11)}
         },
         12:{
             title: "Electric Energy",
             description: "A second type of energy. Boost Planet gain.",
-            cost: new Decimal(100),
+            cost: new Decimal(10000),
             unlocked(){return hasUpgrade('E',11)},
         },
     },
+    milestones: {
+        0: {
+            title: "Better Formulas",
+            requirementDescription: "Gain 1000000 Energy",
+            effectDescription: "Increase Life upgrades' effects",
+            done() { return player.w.points.gte(1000000) }
+        }
+    }
 })
