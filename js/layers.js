@@ -94,13 +94,13 @@ addLayer("ACH", {
     achievements: {
         11: {
             name: "First Row Complete!",
-            done() {return hasUpgrade('P',11), hasUpgrade('P',12), hasUpgrade('P',13), hasUpgrade('P',14)},
+            done() {return hasUpgrade('P',11), hasUpgrade('P',12), hasUpgrade('P',13), hasUpgrade('P',14), hasUpgrade('P',21), hasUpgrade('P',22), hasUpgrade('P',23),hasUpgrade('P',24)},
             tooltip: "Reward: Unlock Energy Upgrades!"
-        },
+            },
         12: {
             name: "Double Energy",
             done() {return hasUpgrade('E',11), hasUpgrade('E',12)},
-            tooltip: "Get 2 energy upgrades!"
+            tooltip: "Get 2 energy upgrades!",
         },
     },
 }),
