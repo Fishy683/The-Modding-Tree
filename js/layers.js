@@ -99,8 +99,9 @@ addLayer("ACH", {
         },
         12: {
             name: "Double Energy",
-            done() {return }
-        }
+            done() {return hasUpgrade('E',11), hasUpgrade('E',12)},
+            tooltip: "Get 2 energy upgrades!"
+        },
     },
 }),
 addLayer("E", {
@@ -138,5 +139,9 @@ addLayer("E", {
             cost: new Decimal(0),
             unlocked() {return hasAchievement ('ACH',11)}
         },
+        12:{
+            name: "Electric Energy",
+            description: "A second type of energy. Boost Planet gain."
+        }
     },
 })
