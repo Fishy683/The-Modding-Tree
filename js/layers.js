@@ -40,7 +40,10 @@ addLayer("P", {
         },
         12: {
             title: "Rapid Growth",
-            description: "Double Life gain",
+            description(){
+                if(!hasUpgarde('E',13)) return "Double Life gain"
+                if(hasUpgrade('E',13)) return "Multiply Life gain by 12"
+            },
             cost: new Decimal(5),
             unlocked(){ return hasUpgrade('P',11)}
         },
@@ -146,13 +149,11 @@ addLayer("E", {
             cost: new Decimal(10000),
             unlocked(){return hasUpgrade('E',11)},
         },
-    },
-    milestones: {
-        0: {
-            title: "Better Formulas",
-            requirementDescription: "Gain 1000000 Energy",
-            effectDescription: "Increase Life upgrades' effects",
-            done() { return player.w.points.gte(1000000) }
+        13:{
+            title: "Dimensional Boost",
+            description: "Increase Life upgradess' effects",
+            cost: new Decimal(1000000),
+            unlocked(){return hasUpgrade('E',12)}
         }
-    }
+    },
 })
