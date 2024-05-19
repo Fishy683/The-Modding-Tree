@@ -96,9 +96,11 @@ addLayer("ACH", {
             name: "First Row Complete!",
             done() {return hasUpgrade('P',11), hasUpgrade('P',12), hasUpgrade('P',13), hasUpgrade('P',14)},
             tooltip: "Reward: Unlock Energy Upgrades!"
-
         },
-        
+        12: {
+            name: "Double Energy",
+            done() {return }
+        }
     },
 }),
 addLayer("E", {
@@ -129,5 +131,12 @@ addLayer("E", {
         {key: "e", description: "E: Reset for Energy", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
-    
+    upgrades: {
+        11:{
+            name: "Sound Energy",
+            description: "Your first type of energy. Boosts Life gain exponentially.",
+            cost: new Decimal(0),
+            unlocked() {return hasAchievement ('ACH',11)}
+        },
+    },
 })
