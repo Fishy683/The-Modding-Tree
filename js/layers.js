@@ -94,7 +94,7 @@ addLayer("ACH", {
     row: "side",
     achievements: {
         11: {
-            name: "Two Rows already",
+            name: "Two Rows Already",
             done() {return hasUpgrade('P',11), hasUpgrade('P',12), hasUpgrade('P',13), hasUpgrade('P',14), hasUpgrade('P',21), hasUpgrade('P',22), hasUpgrade('P',23),hasUpgrade('P',24)},
             tooltip: "Reward: Unlock Energy Upgrades!"
             },
