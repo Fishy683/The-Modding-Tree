@@ -134,14 +134,16 @@ addLayer("E", {
     layerShown(){return true},
     upgrades: {
         11:{
-            name: "Sound Energy",
+            title: "Sound Energy",
             description: "Your first type of energy. Boosts Life gain exponentially.",
             cost: new Decimal(0),
-            unlocked() {return hasAchievement ('ACH',11)}
+            unlocked() {return hasAchievement('ACH',11)}
         },
         12:{
-            name: "Electric Energy",
-            description: "A second type of energy. Boost Planet gain."
-        }
+            title: "Electric Energy",
+            description: "A second type of energy. Boost Planet gain.",
+            cost: new Decimal(100),
+            unlocked(){return hasUpgrade('E',11)},
+        },
     },
 })
