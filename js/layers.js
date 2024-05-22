@@ -40,10 +40,7 @@ addLayer("P", {
         },
         12: {
             title: "Rapid Growth",
-            description(){
-                if(!hasUpgarde('E',13)) return "Double Life gain"
-                if(hasUpgrade('E',13)) return "Multiply Life gain by 12"
-            },
+            description: "Double Life gain",
             cost: new Decimal(5),
             unlocked(){ return hasUpgrade('P',11)}
         },
