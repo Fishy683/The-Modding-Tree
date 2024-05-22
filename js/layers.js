@@ -146,11 +146,12 @@ addLayer("E", {
             cost: new Decimal(10000),
             unlocked(){return hasUpgrade('E',11)},
         },
-        13:{
-            title: "Dimensional Boost",
-            description: "Increase Life upgradess' effects",
-            cost: new Decimal(1000000),
-            unlocked(){return hasUpgrade('E',12)}
+    },
+    milestones: {
+        0: {
+            requirementDescription: "1e8 Life",
+            effectDescription: "Increase Life upgrades' effects",
+            done() {return player.w.points.gte(1e8) }
         }
     },
 })
